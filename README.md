@@ -23,14 +23,47 @@ This example shows how to configure an LED to blink periodically using drivers i
 - [Microchip PIC18F47Q57 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM164150)
 
 ## Setup
+MCC with Melody library was used to implement this example as shown in the following sections.
+### Timer Driver
+The Timer Driver was simply added to the project by locating it in the Device Resources pane on the left side in MCC. Within the Drivers menu (expand if needed, red box in image below)timer menu (expand if needed, green box in image below), click on the green plus next to where it says TMR0 (blue box in image below)
+
+![MCC - Adding Timer Driver](images/MCC_add_timer_driver.png)
+*Device Resources*
+
+When the Timer Driver was added, it was shown in the Project Resources and in the Builder view as seen below.
+
+![MCC - Project Resources with Timer](images/MCC_project_resources_tmr_added.png)
+*Project Resources*
+
+![MCC - Builder with Timer](images/MCC_builder_tmr_added.png)
+*Builder*
+
+### Timer Configuration
+The Timer needs to be configured properly in order to have the code work properly.  There are a few possibilities of what you will see on your screen.  Feel free to skip ahead to the image that matches what you see on your screen.
+
+There should be a tab on the right side that says "TMR0", click it (red box, see image below).
+
+![MCC - Nav to Tmr Config 1](images/MCC_nav_to_tmr_config_1.png)
+*TMR0 tab is vertical on the right*
+
+Next click on the little black solid circle in the upper right of the screen (red box, see image below).
+
+![MCC - Nav to Tmr Config 2](images/MCC_nav_to_tmr_config_2.png)
+*TMR0 tab is selected, menu is behind builder tab*
+
+Now, make sure that the configuration window looks EXACTLY like the one below.  Anything in a red box needs to be changed from the default value.  
+
+![MCC - Tmr Config menu](images/MCC_tmr_config_menu.png)
+*TMR0 Configuration tab*
+
+### Interrupt Configuration
+
+### Pin Configuration
+
+### Code Implementation
 
 <!-- Explain how to connect hardware and set up software. Depending on complexity, step-by-step instructions and/or tables and/or images can be used -->
 <!--
-Device Resources-> Drivers -> Timer-> TMR0:
-include timer0 into code
-
-Note: include a picture of what the Builder tab looks like
-
 Within Timer 0 configuration window:
 Clock prescaler 1:1024 (determines the upper and lower bounds of the 'Requested Period(s) line)
 Timer Mode: 8-bit
@@ -96,9 +129,8 @@ END CODE
 -->
 
 ## Operation
-
-<!-- Explain how to operate the example. Depending on complexity, step-by-step instructions and/or tables and/or images can be used -->
+After having flashed the application to the PIC18F57Q47 Curiosity Nano, the onboard LED is blinking on and off.
 
 ## Summary
 
-<!-- Summarize what the example has shown -->
+The example has shown how MCC can be used to configure the pins of the PIC18F57Q47 device.
