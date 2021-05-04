@@ -51,64 +51,62 @@ Next click on the little black solid circle in the upper right of the screen (re
 ![MCC - Nav to Tmr Config 2](images/MCC_nav_to_tmr_config_2.png)
 *TMR0 tab is selected, menu is behind builder tab*
 
-Now, make sure that the configuration window looks EXACTLY like the one below.  Anything in a red box needs to be changed from the default value.  
+Now, the correct settings are selected in the configuration window.  The **Clock Prescaler** needs to change to 1:1024 (this will change the upper and lower bounds of the **Requested Period(s)** section).  The **Clock Source** needs to change to FOSC/4.  The **Requested Period(s)** needs to change to 0.5 (this value represents the time between blinks, this number can be changed to any value within the provided bounds).  Lastly, the **TMR Interrupt** is enabled (blue switch background).  The changes are highlighted by the red boxesn (see image below).
 
 ![MCC - Tmr Config menu](images/MCC_tmr_config_menu.png)
 *TMR0 Configuration tab*
 
 ### Interrupt Configuration
+Just like the Timer Configuration skip ahead to the image that matches what you see on screen.
+
+Click on the vertical Interrupt Manager tab on the right side (red box, see image below).
+
+![MCC - Nav to Int menu](images/MCC_nav_to_int_menu_1.png)
+*Interrupt Manager tab is vertical on the right*
+NOTE: You may have the tab on the right in a different order
+
+Now click on the little black solid circle in the upper right of the screen (red box, see image below).
+
+![MCC - Nav to Int Menu 2](images/MCC_nav_to_int_menu_2.png)
+*Interrupt Manager tab is selected, menu is behind TMR0 tab*
+
+Now, the correct settings are selected in the configuration window.  There should not be any needed changes (see image below).
+
+![MCC - Int menu](images/MCC_Int_menu.png)
+*Interrupt Manager tab*
 
 ### Pin Configuration
+The Pin controlling the onboard LED on the Curiosity Nano board was configured using the Pins Grid View.  The Pins Grid View is accessed by clicking on the Pins line in Project Resources.
+
+![MCC - Open Pin Manager](images/MCC_project_resources_pins.png)
+*Project Resources*
+
+Then the pin connected to the LED, RF3, was selected as an output by clicking the corresponding padlock symbol (red box, see image below).
+
+![MCC - Set Pin to Output](images/MCC_pins_grid_view.png)
+*Pins Grid View*
+
+The pin was also configured with a custom name to make the generated API more readable.  No other pin setting were modified.
+
+![MCC - Custom Pin Name](images/MCC_pins_custom_name.png)
+*Custom Pin Name*
 
 ### Code Implementation
+Click Generate within the Project Resources Menu.
 
-<!-- Explain how to connect hardware and set up software. Depending on complexity, step-by-step instructions and/or tables and/or images can be used -->
-<!--
-Within Timer 0 configuration window:
-Clock prescaler 1:1024 (determines the upper and lower bounds of the 'Requested Period(s) line)
-Timer Mode: 8-bit
-Clock Source: FOSC/4
-Requested Period: 0.5 (this gives a range of possible wait times)
-Turn 'TMR Interrupt' on (circle on right, blue in switch)
+![MCC - Generate Code](images/MCC_generate_code.png)
+*Generate the code*
 
-In Interrupt Manager Tab:
-Make sure that the 'Enable Isngle ISR Execution per entry' is on, everything else is off
-TMR0 is included in the Interrupt Table and has the Enable box checked
+First, the code needs an additional function to operate correctly.  This function uses the pin manager API to toggle the LED on and off.
 
-Click on System-> Pins
-In Pin grid view click on 'GPIO-output' for pin RF3
-In Pins tab:
-add a label to pin RF3, call it "LED_PIN" (in custon name column), make sure it does not have 'Start High, Week Pullup, or Open Drain' selected, also make sure that it has 'Analog, Slew Rate, and Input Level Control' selected.
-
-Click on Generate
-
-All of the necessary APIs should be created at this point except for one.
-
-Above the main(void) line in the main.c code, add in the following function.
-"void LED_PIN_ISR(void){ 
+```c
+void LED_PIN_ISR(void){ 
     LED_PIN_Toggle();
     }
+```
+Then the pin manager and timer interrupt APIs were used to set the LED pin High (turns it off), and start a toggle sequence once the timer overflow interrupt is triggered.
 
-
-----------------------------------------------------------------------------------------------
-
-
-
-INTERNAL (working code):
-START CoDe:
-#include "mcc_generated_files/system/system.h"
-
-/*
-    Main application
-*/
-/*
- Creating an empty function for the Timer0 to call on when an interrupt occurs.
- */
-void LED_PIN_ISR(void){ 
-    LED_PIN_Toggle(); //Turns the pin called 'LED_PIN' on or off depending on
-                      //the current state of the pin. 
-                      //see pins.h for exact function code
-}
+```c
 int main(void)
 {
     SYSTEM_Initialize();
@@ -121,13 +119,7 @@ int main(void)
         INTERRUPT_GlobalInterruptDisable(); //turn off interrupts
     }    
 }
-
-END CODE
-
------------------------------------------------------------------------------------------------
-
--->
-
+```
 ## Operation
 After having flashed the application to the PIC18F57Q47 Curiosity Nano, the onboard LED is blinking on and off.
 
