@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-Q_DFP",
+            "semverRange": "^1.9.175"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "Mplabx",
+            "semverRange": ">=4.1.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,9 +37,26 @@
             }
         },
         "author": "Jonah Lerner",
-        "subcategories": [],
-        "peripherals": [],
-        "keywords": [],
+        "subcategories": [
+            [
+                "Peripherals", "PORT"
+            ],
+            [
+                "Peripherals", "TMR0"
+            ]
+        ],
+        "peripherals": [
+            "TMR0", 
+            "PORT",
+
+        ],
+        "keywords": [
+            "PORT",
+            "Timer", 
+            "LED",
+            "Curiousity Nano",
+            "Melody"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
