@@ -24,6 +24,7 @@ This example shows how to configure an LED to blink periodically using drivers i
 
 ## Setup
 MCC with Melody library was used to implement this example as shown in the following sections.
+
 ### Timer Driver
 The Timer Driver was simply added to the project by locating it in the Device Resources pane on the left side in MCC. Within the Drivers menu (expand if needed, red box in image below)timer menu (expand if needed, green box in image below), click on the green plus next to where it says TMR0 (blue box in image below)
 
