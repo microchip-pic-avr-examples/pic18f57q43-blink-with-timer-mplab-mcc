@@ -61,7 +61,7 @@ Next click on the little black solid circle in the upper right of the screen (re
 ![MCC - Nav to Tmr Config 2](images/MCC_nav_to_tmr_config_2.PNG)
 
 
-Now, the correct settings are selected in the configuration window.  The **Clock Prescaler** needs to change to 1:1024 (this will change the upper and lower bounds of the **Requested Period(s)** section).  The **Clock Source** needs to change to FOSC/4.  The **Requested Period(s)** needs to change to 0.5 (this value represents the time between blinks, this number can be changed to any value within the provided bounds).  Lastly, the **TMR Interrupt** is enabled (blue switch background).  The changes are highlighted by the red boxesn (see image below).
+Now, the correct settings are selected in the configuration window.  The **Clock Prescaler** needs to change to 1:1024 (this will change the upper and lower bounds of the **Requested Period(s)** section).  The **Clock Source** needs to change to FOSC/4.  The **Requested Period(s)** needs to change to 0.5 (this value represents the time between blinks, this number can be changed to any value within the provided bounds).  Lastly, the **TMR Interrupt** is enabled (blue switch background).  The changes are highlighted by the red boxes (see image below).
 
 *TMR0 Configuration tab*
 
