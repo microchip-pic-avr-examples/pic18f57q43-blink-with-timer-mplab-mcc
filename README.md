@@ -33,7 +33,7 @@ The Timer Driver was simply added to the project by locating it in the Device Re
 ![MCC - Adding Timer Driver](images/MCC_add_timer_driver.PNG)
 
 
-When the Timer Driver was added, it was shown in the Project Resources and in the Builder view as seen below.
+When the Timer Driver was added, it was shown in the Project Resources and in the Builder view as seen below.  
 
 *Project Resources - TMR0*
 
@@ -43,6 +43,7 @@ When the Timer Driver was added, it was shown in the Project Resources and in th
 
 ![MCC - Builder with Timer](images/MCC_builder_tmr_added.PNG)
 
+If you click the '+' button at the top of the System Firmware box, it will expand to show what is in the above image.  From here, clicking the 'Pins' box will open the Pins Grid View.  To utilize that view, see the "Pin Configuration" section below.
 
 ### Timer Configuration
 The Timer needs to be configured properly in order to have the code work properly.  There are a few possibilities of what you will see on your screen.  Feel free to skip ahead to the image that matches what you see on your screen.
@@ -148,6 +149,9 @@ int main(void)
 ```
 ## Operation
 After having flashed the application to the PIC18F57Q47 Curiosity Nano, the onboard LED is blinking on and off.
+
+*Final Result - LED Blink*
+![Curiosity Nano Onboard LED Blinking](images/Curiosity_Nano_LED_Blink_with_timer.gif)
 
 ## Summary
 
