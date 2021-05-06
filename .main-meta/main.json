@@ -47,7 +47,7 @@
         ],
         "peripherals": [
             "TMR0", 
-            "PORT",
+            "PORT"
 
         ],
         "keywords": [
