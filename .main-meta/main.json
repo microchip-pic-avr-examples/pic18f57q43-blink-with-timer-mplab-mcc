@@ -5,7 +5,7 @@
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f57q43-blink-with-timer-mplab-mcc",
         "version": "1.0.0",
-        "displayName": "PIC18F57Q43 blink with timer mplab mcc",
+        "displayName": "PIC18F57Q43 LED Blink using Timer",
         "projectName": "pic18f57q43-blink-with-timer-mplab-mcc",
         "shortDescription": "This example showcases an LED blinking with a timer and uses the Melody tool",
         "ide": {
