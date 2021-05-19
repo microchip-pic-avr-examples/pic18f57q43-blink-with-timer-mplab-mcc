@@ -48,11 +48,11 @@ int main(void)
 {
     SYSTEM_Initialize();
     LED_PIN_LAT = HIGH; //Turns LED off before running rest of code
-    while(1)
-    {
-        INTERRUPT_GlobalInterruptEnable(); //turn on interrupts
-        //When the registers TMR0L/H overflow, the function 'LED_PIN_ISR' gets executed
-        Timer0_OverflowCallbackRegister(LED_PIN_ISR); 
-        INTERRUPT_GlobalInterruptDisable(); //turn off interrupts
+    //When the registers TMR0L/H overflow, the function 'LED_PIN_ISR' gets executed 
+    Timer0_OverflowCallbackRegister(LED_PIN_ISR);
+    
+    INTERRUPT_GlobalInterruptEnable(); //turn on interrupts
+    while(1){
+                     
     }    
 }
