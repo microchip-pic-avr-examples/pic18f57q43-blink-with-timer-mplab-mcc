@@ -5,9 +5,9 @@
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f57q43-blink-with-timer-mplab-mcc",
         "version": "1.0.0",
-        "displayName": "PIC18F57Q43 LED Blink using Timer",
+        "displayName": "LED Blink using Timer",
         "projectName": "pic18f57q43-blink-with-timer-mplab-mcc",
-        "shortDescription": "This example showcases an LED blinking with a timer and uses the Melody tool",
+        "shortDescription": "This example uses the MCC Melody Library to show how to configure TMR0 in interrupt mode to toggle an LED using the PIC18F57Q43 Curiosity Nano devleopment kit. Works with MPLAB X or MPLAB XPRESS IDE.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=5.45.0"

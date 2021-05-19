@@ -3,7 +3,7 @@
 
 # Blink with Timer
 
-This example shows how to configure an LED to blink periodically using drivers in MPLAB Code Configurator (MCC). The example uses the Pin Manager to configure the pin and generate an API with which the pin is later interfaced. Also, the timer driver is used to implement periodic interrupt between each time the pin output is toggled.
+This example shows how to configure an LED to blink periodically using a timer.  The drivers for the timer are generated using the MPLAB Code Configurator (MCC).
 
 ## Related Documentation
 
@@ -154,6 +154,7 @@ int main(void)
 After having flashed the application to the PIC18F57Q43 Curiosity Nano, the onboard LED is blinking on and off.
 
 *Final Result - LED Blink*
+
 ![Curiosity Nano Onboard LED Blinking](images/Curiosity_Nano_LED_Blink_with_timer.gif)
 
 ## Summary
