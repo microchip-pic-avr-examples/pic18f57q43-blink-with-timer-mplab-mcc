@@ -139,7 +139,7 @@ Then the pin manager and timer interrupt APIs are used to set the LED pin High (
 ```c
 int main(void)
 {
-    //STEP 1 - The system is initalized
+    //STEP 1 - The system is initialized
     SYSTEM_Initialize();
 
     //STEP 2 - The LED_PIN is set HIGH which turns off the LED

@@ -46,12 +46,19 @@ void LED_PIN_ISR(void){
 }
 int main(void)
 {
+    //STEP 1 - The system is initialized
     SYSTEM_Initialize();
-    LED_PIN_LAT = HIGH; //Turns LED off before running rest of code
-    //When the registers TMR0L/H overflow, the function 'LED_PIN_ISR' gets executed 
+
+    //STEP 2 - The LED_PIN is set HIGH which turns off the LED
+    LED_PIN_LAT = HIGH; 
+
+    //STEP 3 - The "LED_PIN_ISR" function is called in the 
+    //"Timer0_OverflowCallbackRegister()" function.  This allows for the 
+    //"LED_PIN_ISR" function to be called whenever the timer overflows.
     Timer0_OverflowCallbackRegister(LED_PIN_ISR);
     
-    INTERRUPT_GlobalInterruptEnable(); //turn on interrupts
+    //STEP 4 - turn on interrupts
+    INTERRUPT_GlobalInterruptEnable(); 
     while(1){
                      
     }    
