@@ -14,6 +14,7 @@ This example shows how to configure an LED to blink periodically using a timer. 
 ## Software Used
 
 - [MPLAB® X IDE](http://www.microchip.com/mplab/mplab-x-ide) **5.45** or newer
+- [MPLAB® Xpress IDE](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xpress) (alternative to MPLAB® X IDE)
 - [MPLAB® XC8](http://www.microchip.com/mplab/compilers) **2.31** or a newer compiler 
 - [MPLAB® Code Configurator (MCC)](https://www.microchip.com/mplab/mplab-code-configurator) **4.1.0** or newer 
 - [MPLAB® Melody Library](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-code-configurator) **1.37.25** or newer
